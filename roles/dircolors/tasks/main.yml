@@ -1,0 +1,7 @@
+---
+
+- name: Download dircolors
+  get_url:
+    url: "https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-universal"
+    dest: "{{ ansible_env.HOME }}/.dircolors"
+    sha256sum: "e0b617a2983abab2bb0226a540ec9bf0cbf9e5bcf36603e71ef71b38df0967a0"

@@ -1,0 +1,20 @@
+---
+
+- shell: Which zsh
+  register: zsh_path
+
+- shell: "grep '^{{ zsh_path.stdout }}$' /etc/shells"
+  register: exists_login_shell
+  changed_when: false
+
+- lineinfile:
+    dest: /etc/shells
+    line: "{{ zsh_path.stdout }}"
+    state: present
+    owner: root
+    group: wheel
+    mode: 0644
+  become: yes
+  when: exists_login_shell.rc == 1
+
+- shell: chsh -s {{ zsh_path.stdout }}

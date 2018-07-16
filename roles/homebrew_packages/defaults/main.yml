@@ -1,0 +1,31 @@
+---
+
+homebrew_taps:
+  - caskroom/cask
+
+homebrew_packages:
+  - { name: openssl }
+  - { name: coreutils }
+  - { name: libxml2 }
+  - { name: autoconf }
+  - { name: automake }
+  - { name: docker-machine }
+  - { name: jq }
+  - { name: tree }
+  - { name: curl }
+  - { name: nkf }
+  - { name: wget }
+  - { name: go }
+  - { name: zsh }
+  - { name: zsh-history-substring-search }
+  - { name: neovim }
+  - { name: mas }
+
+homebrew_cask_packages:
+  - { name: java }
+  - { name: karabiner-elements }
+  - { name: docker }
+  - { name: visual-studio-code }
+  - { name: visual-studio }
+  - { name: google-chrome }
+  - { name: dropbox }

@@ -1,0 +1,18 @@
+---
+
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+    - homebrew_packages
+    - mas_packages
+    - dircolors
+    - dotfiles
+    - login_shell
+  tasks:
+    - name: change login shell
+      shell: >
+        chpass -s {{which_zsh.stdout}}
+      register: result
+      until: result.rc == 0
+      retries: 3

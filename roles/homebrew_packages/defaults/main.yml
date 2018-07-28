@@ -22,10 +22,15 @@ homebrew_packages:
   - { name: mas }
 
 homebrew_cask_packages:
+  - { name: google-japanese-ime }
   - { name: java }
   - { name: karabiner-elements }
   - { name: docker }
   - { name: visual-studio-code }
   - { name: visual-studio }
   - { name: google-chrome }
+  - { name: firefox }
   - { name: dropbox }
+  - { name: cakebrew }
+  - { name: appcleaner }
+  - { name: adobe-acrobat-reader }

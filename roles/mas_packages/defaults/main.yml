@@ -4,3 +4,4 @@ mas_packages:
   - { name: XCode,          id: 497799835 }
   - { name: The Unarchiver, id: 425424353 }
   - { name: iMage Tools,    id: 493949693 }
+  - { name: Affinity Photo, id: 824183456 }

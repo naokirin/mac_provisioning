@@ -9,9 +9,13 @@
     - dotfiles
     - login_shell
   tasks:
+    - name: which zsh
+      shell: which zsh
+      register: which_zsh
+
     - name: change login shell
       shell: >
-        chpass -s {{which_zsh.stdout}}
+        chpass -s {{ which_zsh.stdout }}
       register: result
       until: result.rc == 0
       retries: 3

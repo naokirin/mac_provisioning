@@ -1,11 +1,12 @@
 ---
 
-- shell: Which zsh
+- shell: which zsh
   register: zsh_path
 
 - shell: "grep '^{{ zsh_path.stdout }}$' /etc/shells"
   register: exists_login_shell
   changed_when: false
+  ignore_errors: yes
 
 - lineinfile:
     dest: /etc/shells

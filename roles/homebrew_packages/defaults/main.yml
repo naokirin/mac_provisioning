@@ -1,7 +1,7 @@
 ---
 
 homebrew_taps:
-  - caskroom/cask
+  - homebrew/cask
 
 homebrew_packages:
   - { name: openssl }

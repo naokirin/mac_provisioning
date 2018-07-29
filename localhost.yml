@@ -2,7 +2,6 @@
 
 - hosts: localhost
   connection: local
-  gather_facts: no
   roles:
     - homebrew_packages
     - mas_packages

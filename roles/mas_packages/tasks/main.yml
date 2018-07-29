@@ -1,6 +1,6 @@
 ---
 
-- name: install appstore applications
+- name: Install appstore applications
   command: mas install "{{ item.id }}"
-  with_items: mas_packages
-  when: with_mas_packages == "true"
+  with_items: "{{ mas_packages }}"
+  when: with_mas_packages | default("") == "true"

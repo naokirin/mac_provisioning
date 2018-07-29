@@ -14,5 +14,5 @@ git clone https://github.com/naokirin/mac_provisioning.git
 
 cd mac_provisioning
 
-ansible-playbook localhost.yml -K
+ansible-playbook localhost.yml  -e 'with_mas_packages=true' -K
 

@@ -1,5 +1,10 @@
 ---
 
+- name: Update and upgrade homebrew
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
+
 - name: Add homebrew tap repository
   homebrew_tap:
     tap: "{{ item }}"

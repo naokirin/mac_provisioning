@@ -8,6 +8,7 @@
     - dircolors
     - dotfiles
     - login_shell
+    - setup_neovim
   tasks:
     - name: which zsh
       shell: which zsh

@@ -1,0 +1,10 @@
+---
+
+- name: Installer shellscript for dein.vim
+  get_url:
+    url: https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
+    dest: /tmp/dein_installer.sh
+    checksum: sha256:8fdc9ef30da0b6b59d64d40bb5d6646738f2a320
+
+- name: Install dein.vim
+  shell: sh /tmp/dein_installer.sh ~/.cache/dein

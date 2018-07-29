@@ -20,6 +20,7 @@ homebrew_packages:
   - { name: zsh-history-substring-search }
   - { name: neovim }
   - { name: mas }
+  - { name: tmux }
 
 homebrew_cask_packages:
   - { name: google-japanese-ime }

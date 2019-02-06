@@ -1,0 +1,38 @@
+- name: Install rbenv
+  git:
+    repo: https://github.com/rbenv/rbenv.git
+    dest: ~/.rbenv
+
+- name: Set rbenv path
+  template:
+    src: 001_rbenv.sh
+    dest: ~/.zsh.d/001_rbenv.sh
+    mode: 0755
+
+- name: Install ruby-build
+  git:
+    repo: https://github.com/sstephenson/ruby-build.git
+    dest: ~/.rbenv/plugins/ruby-build
+
+- name: Check current ruby version
+  shell: |
+    /bin/zsh -lc "ruby -v | grep -o '^ruby [0-9].[0-9].[0-9]' | cut -f 2 -d ' '"
+  register: current_ruby_version
+  changed_when: False
+
+- name: Shell relogin
+  shell: |
+    /bin/zsh -lc  "source ~/.zprofile"
+  when: current_ruby_version.stdout != ruby_version
+
+- name: Install ruby
+  shell: |
+    /bin/zsh -lc "rbenv install {{ ruby_version }}"
+    /bin/zsh -lc "rbenv rehash"
+    /bin/zsh -lc "rbenv local {{ ruby_version }}"
+  when: current_ruby_version.stdout != ruby_version
+
+- name: Install bundler
+  shell: /bin/zsh -lc "gem install bundler"
+  when: current_ruby_version.stdout != ruby_version
+

@@ -1,0 +1,12 @@
+- name: Create zprofile
+  template:
+    src: .zprofile
+    dest: ~/.zprofile
+    mode: 0644
+
+- name: Make directory .zsh.d
+  file:
+    path: ~/.zsh.d
+    state: directory
+    mode: 0755
+

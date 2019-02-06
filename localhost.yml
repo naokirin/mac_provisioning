@@ -3,12 +3,14 @@
 - hosts: localhost
   connection: local
   roles:
+    - zprofile
     - homebrew_packages
     - mas_packages
     - dircolors
     - dotfiles
     - login_shell
     - setup_neovim
+    - rbenv
   tasks:
     - name: which zsh
       shell: which zsh

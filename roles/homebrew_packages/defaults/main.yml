@@ -16,11 +16,13 @@ homebrew_packages:
   - { name: nkf }
   - { name: wget }
   - { name: go }
+  - { name: python3 }
   - { name: zsh }
   - { name: zsh-history-substring-search }
   - { name: neovim }
   - { name: mas }
   - { name: tmux }
+  - { name: ctags }
 
 homebrew_cask_packages:
   - { name: google-japanese-ime }

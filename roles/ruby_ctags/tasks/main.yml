@@ -1,0 +1,23 @@
+- name: Alias ctags for installed brew
+  template:
+    src: 001_alias_ctags.sh
+    dest: "{{ ansible_env.HOME }}/.zsh.d/001_alias_ctags.sh"
+    mode: 755
+
+- name: Install gem-ctags
+  shell: |
+    gem install gem-ctags
+    gem ctags
+
+- name: Make directory .rbenv/plugins
+  file:
+    path: "{{ ansible_env.HOME }}/.rbenv/plugins"
+    state: directory
+
+- name: Clone rbenv-ctags
+  git:
+    repo: https://github.com/tpope/rbenv-ctags.git
+    dest: "{{ ansible_env.HOME }}/.rbenv/plugins/rbenv-ctags"
+
+- name: Install rbenv ctags
+  shell: /bin/zsh -lc "rbenv ctags"

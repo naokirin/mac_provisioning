@@ -1,18 +1,18 @@
 - name: Install rbenv
   git:
     repo: https://github.com/rbenv/rbenv.git
-    dest: ~/.rbenv
+    dest: "{{ ansible_env.HOME }}/.rbenv"
 
 - name: Set rbenv path
   template:
     src: 001_rbenv.sh
-    dest: ~/.zsh.d/001_rbenv.sh
+    dest: "{{ ansble_env.HOME }}/.zsh.d/001_rbenv.sh"
     mode: 0755
 
 - name: Install ruby-build
   git:
     repo: https://github.com/sstephenson/ruby-build.git
-    dest: ~/.rbenv/plugins/ruby-build
+    dest: "{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build"
 
 - name: Check current ruby version
   shell: |

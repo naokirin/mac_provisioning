@@ -11,6 +11,7 @@
     - login_shell
     - setup_neovim
     - rbenv
+    - ruby_ctags
   tasks:
     - name: which zsh
       shell: which zsh

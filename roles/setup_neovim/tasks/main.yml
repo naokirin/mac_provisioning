@@ -8,3 +8,9 @@
 
 - name: Install dein.vim
   shell: sh /tmp/dein_installer.sh ~/.cache/dein
+
+- name: Install pynvim
+  shell: pip3 install --user pynvim
+
+- name: Install neovim gem
+  shell: /bin/zsh -lc "gem install neovim"

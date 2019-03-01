@@ -12,6 +12,8 @@
     - setup_neovim
     - rbenv
     - ruby_ctags
+    - sdkman
+    - micronaut
   tasks:
     - name: which zsh
       shell: which zsh

@@ -1,0 +1,8 @@
+---
+
+- name: Install sdkman
+  shell: "curl -s https://get.sdkman.io | bash"
+
+- name: Initialize sdkman
+  shell: "source {{ ansible_env.HOME }}/.sdkman/bin/sdkman-init.sh"
+

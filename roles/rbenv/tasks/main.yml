@@ -29,7 +29,7 @@
   shell: |
     /bin/zsh -lc "rbenv install {{ ruby_version }}"
     /bin/zsh -lc "rbenv rehash"
-    /bin/zsh -lc "rbenv local {{ ruby_version }}"
+    /bin/zsh -lc "rbenv global {{ ruby_version }}"
   when: current_ruby_version.stdout != ruby_version
 
 - name: Install bundler

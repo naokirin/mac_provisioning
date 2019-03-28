@@ -27,7 +27,7 @@
 
 - name: Install ruby
   shell: |
-    /bin/zsh -lc "rbenv install {{ ruby_version }}"
+    /bin/zsh -lc "RUBY_CONFIGURE_OPTS=--with-readline-dir=`brew --prefix readline` rbenv install {{ ruby_version }}"
     /bin/zsh -lc "rbenv rehash"
     /bin/zsh -lc "rbenv global {{ ruby_version }}"
   when: current_ruby_version.stdout != ruby_version

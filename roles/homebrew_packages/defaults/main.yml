@@ -23,6 +23,7 @@ homebrew_packages:
   - { name: mas }
   - { name: tmux }
   - { name: ctags }
+  - { name: readline }
 
 homebrew_cask_packages:
   - { name: google-japanese-ime }

@@ -1,0 +1,7 @@
+---
+
+npm_packages:
+  - { name: @vue/cli }
+  - { name: @vue/cli-init }
+  - { name: prettier }
+  - { name: eslint }

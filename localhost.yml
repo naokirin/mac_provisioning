@@ -14,6 +14,7 @@
     - ruby_ctags
     - sdkman
     - micronaut
+    - npm_packages
   tasks:
     - name: which zsh
       shell: which zsh
